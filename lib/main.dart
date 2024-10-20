@@ -17,10 +17,10 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.playfairDisplayTextTheme(
           Theme.of(context).textTheme,
         ),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: const Color(0xFF664343),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Home Page'),
+      home: const MyHomePage(title: 'Caffe.In'),
     );
   }
 }
