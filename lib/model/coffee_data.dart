@@ -3,7 +3,8 @@ class CoffeeData {
   String address;
   String region;
   String description;
-  String instagram;
+  String igName;
+  String igLink;
   String openHour;
   List<String> menuNames;
   List<String> menuPrices;
@@ -16,7 +17,8 @@ class CoffeeData {
     required this.address,
     required this.region,
     required this.description,
-    required this.instagram,
+    required this.igName,
+    required this.igLink,
     required this.openHour,
     required this.menuNames,
     required this.menuPrices,
@@ -31,8 +33,9 @@ var coffeeDataList = [
     address: ' Jl. RP Soeparto, Mentaos, Kec. Banjarbaru Utara, Kota Banjar Baru',
     region: 'Banjarbaru Utara',
     description:
-    'Strategis dan mudah untuk ditemukan membuat Kala menjadi tempat hits bagi kawula muda di Kota Banjarbaru. Hawa minimalis dan modern membuat Kala terasa estetik dan cocok buat kamu yang mengincar potret instagramable. \n Area indoor dan outdoor yang sama nyamannya, plus akses drive thru yang membuatmu merasa nyaman dan praktis berkunjung ke Kala Cafe and Drive Thru Banjarbaru.',
-    instagram: 'https://www.instagram.com/kala.idn/',
+    'Strategis dan mudah untuk ditemukan membuat Kala menjadi tempat hits bagi kawula muda di Kota Banjarbaru. Hawa minimalis dan modern membuat Kala terasa estetik dan cocok buat kamu yang mengincar potret instagramable. \n\n Area indoor dan outdoor yang sama nyamannya, plus akses drive thru yang membuatmu merasa nyaman dan praktis berkunjung ke Kala Cafe and Drive Thru Banjarbaru.',
+    igName: '@kala.idn',
+    igLink: 'https://www.instagram.com/kala.idn/',
     openHour: '09.00 - 23.00',
     menuNames:[
       'Himalayan Latte', 'Kopi Kala', 'Butterscotch Latte'
@@ -54,7 +57,8 @@ var coffeeDataList = [
     region: 'Loktabat Utara',
     description:
     'Merah bata memanjakan mata, Cinnamon tempatnya. Berada di posisi pusat kota Banjarbaru membuat tempat ini menjadi perhatian selalu, dengan gaya modern estetik cocok mengisi gaya di feed instagram kamu.',
-    instagram: 'https://www.instagram.com/cinnamon.bdj/',
+    igName:'@cinnamon.bdj',
+    igLink: 'https://www.instagram.com/cinnamon.bdj/',
     openHour: '09.00 - 22.00',
     menuNames:[
       'Sweet Coffee Pandan', 'Snowy White', 'Pasta Carbonara'
@@ -76,7 +80,8 @@ var coffeeDataList = [
     region: 'Loktabat Utara',
     description:
     'Bergaya elegan ala-ala eropa, Socotra termasuk yang juara. Mampu menampung banyak pengunjung, Socotra juga tak lupa memberikan pelayanan luar biasa, dengan menyediakan ruang VIP untukmu.',
-    instagram: 'https://www.instagram.com/soccotra.id/',
+    igName: '@soccotra.id',
+    igLink: 'https://www.instagram.com/soccotra.id/',
     openHour: '08.00 - 23.00',
     menuNames:[
       'Oathside Shortie','Aren Latte','Vietnam Drip'

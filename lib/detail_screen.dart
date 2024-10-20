@@ -1,14 +1,20 @@
+import 'package:caffein/detail_screen_mobile.dart';
 import 'package:caffein/model/coffee_data.dart';
 import 'package:flutter/material.dart';
 
-class DetailScreenMobile extends StatelessWidget{
+class DetailScreen extends StatelessWidget {
+  const DetailScreen({super.key, required this.coffeeData});
   final CoffeeData coffeeData;
-
-  const DetailScreenMobile({Key? key, required this.coffeeData}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        if (constraints.maxWidth > 800) {
+          return DetailScreenMobile(coffeeData: coffeeData);
+        } else {
+          return DetailScreenMobile(coffeeData: coffeeData);
+        }
+      },
+    );
   }
 }

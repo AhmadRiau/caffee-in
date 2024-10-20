@@ -36,6 +36,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   google_fonts: ^4.0.3
+  font_awesome_flutter: ^10.7.0
+  url_launcher: ^6.1.7
+  insta_image_viewer: ^1.0.4
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -90,3 +94,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+  fonts:
+    - family: PlayfairDisplay
+      fonts:
+        - asset: assets/fonts/PlayfairDisplay.ttf
