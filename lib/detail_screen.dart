@@ -1,4 +1,5 @@
 import 'package:caffein/detail_screen_mobile.dart';
+import 'package:caffein/detail_screen_web.dart';
 import 'package:caffein/model/coffee_data.dart';
 import 'package:flutter/material.dart';
 
@@ -9,10 +10,10 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
-        if (constraints.maxWidth > 800) {
+        if (constraints.maxWidth < 600) {
           return DetailScreenMobile(coffeeData: coffeeData);
         } else {
-          return DetailScreenMobile(coffeeData: coffeeData);
+          return DetailScreenWeb(coffeeData: coffeeData);
         }
       },
     );

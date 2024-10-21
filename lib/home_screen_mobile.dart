@@ -14,7 +14,7 @@ class HomeScreenMobile extends StatefulWidget {
 class _HomeScreenMobileState extends State<HomeScreenMobile> {
   String selectedRegion = 'Semua';
 
-  final List<String> regions = ['Semua', 'Banjarbaru Utara', 'Loktabat Utara'];
+  final List<String> regions = ['Semua', 'Mentaos', 'Loktabat Utara', 'Guntung Paikat', 'Landasan Ulin', 'Loktabat Selatan', 'Cempaka', ];
 
   @override
   Widget build(BuildContext context) {

@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:insta_image_viewer/insta_image_viewer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-var textBold = const TextStyle(fontWeight: FontWeight.bold);
+var textBold = const TextStyle(fontWeight: FontWeight.bold, fontSize: 12);
 
 class DetailScreenMobile extends StatelessWidget {
   const DetailScreenMobile({super.key, required this.coffeeData});
@@ -17,8 +17,6 @@ class DetailScreenMobile extends StatelessWidget {
       throw 'Could not launch $url';
     }
   }
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,8 +28,8 @@ class DetailScreenMobile extends StatelessWidget {
               children: [
                 Image.asset(
                   coffeeData.imageAsset,
-                  width: double.infinity, // agar gambar mengisi seluruh lebar
-                  height: 300, // Tentukan tinggi untuk gambar
+                  width: double.infinity,
+                  height: 300,
                   fit: BoxFit.cover, // agar gambar menyesuaikan ukuran kontainer
                 ),
                 Positioned(
@@ -46,20 +44,29 @@ class DetailScreenMobile extends StatelessWidget {
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: <Color>[
-                          Colors.black26,
+                          Color(0x00000000),
                           Colors.black54,
                           Colors.black
                         ],
                       ),
                     ),
-                    child: Text(
-                      coffeeData.shopName,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 30.0,
-                        color: Color(0xFFFFF0D1), // pastikan teks terlihat di atas gambar
-                        fontWeight: FontWeight.bold,
-                      ),
+                    child: Column(
+                      children: [
+                        Text(
+                          coffeeData.shopName,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontSize: 30.0,
+                            color: Color(0xFFFFF0D1), // pastikan teks terlihat di atas gambar
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          coffeeData.address,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(fontSize: 16.0,color: Color(0xFFFFF0D1)),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -88,37 +95,47 @@ class DetailScreenMobile extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
+
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 16.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        Column(
-                          children: <Widget>[
-                            const Icon(Icons.access_time),
-                            const SizedBox(height: 8.0),
-                            Text(coffeeData.openHour, style: textBold),
-                          ],
+                        Expanded(
+                          flex: 1,
+                          child: Column(
+                            children: <Widget>[
+                              const Icon(Icons.access_time),
+                              const SizedBox(height: 8.0),
+                              Text(coffeeData.openHour, style: textBold, textAlign: TextAlign.center,),
+                            ],
+                          ),
                         ),
-                        Column(
-                          children: <Widget>[
-                            IconButton(
-                              onPressed:() => _launchLink(coffeeData.igLink),
-                              icon: const FaIcon(FontAwesomeIcons.instagram),
-                            ),
-                            const SizedBox(height: 8.0),
-                            Text(coffeeData.igName, style: textBold,),
-                          ],
+                        Expanded(
+                          flex: 1,
+                          child: Column(
+                            children: <Widget>[
+                              IconButton(
+                                onPressed:() => _launchLink(coffeeData.igLink),
+                                icon: const FaIcon(FontAwesomeIcons.instagram),
+                              ),
+                              const SizedBox(height: 8.0),
+                              Text(coffeeData.igName, style: textBold, textAlign: TextAlign.center,),
+                            ],
+                          ),
                         ),
-                        Column(
-                          children: <Widget>[
-                            IconButton(
-                              onPressed:() => _launchLink(coffeeData.gmapLink),
-                              icon: const FaIcon(FontAwesomeIcons.mapLocation),
-                            ),
-                            const SizedBox(height: 8.0),
-                            Text('Open Map', style: textBold),
-                          ],
+                        Expanded(
+                          flex: 1,
+                          child: Column(
+                            children: <Widget>[
+                              IconButton(
+                                onPressed:() => _launchLink(coffeeData.gmapLink),
+                                icon: const FaIcon(FontAwesomeIcons.mapLocation),
+                              ),
+                              const SizedBox(height: 8.0),
+                              Text('Open Map', style: textBold,textAlign: TextAlign.center,),
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -128,6 +145,34 @@ class DetailScreenMobile extends StatelessWidget {
                     textAlign: TextAlign.justify,
                     style: const TextStyle(fontSize: 16.0),
                   ),
+                  const SizedBox(height: 8.0),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Menu Signature:',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                        ),
+                      ),
+                      Column(
+                        children: List.generate(coffeeData.menuNames.length, (index) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 2.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Expanded(flex: 2,child: Text(coffeeData.menuNames[index],)),
+                                Expanded(flex: 1,child: Text(coffeeData.menuPrices[index])),
+                              ],
+                            ),
+                          );
+                        }),
+                      ),
+                    ],
+                  ),
+                  Padding(padding: const EdgeInsets.symmetric(vertical: 2.0),),
                   const Divider(
                     height: 20,
                     thickness: 2,
@@ -151,11 +196,9 @@ class DetailScreenMobile extends StatelessWidget {
                 ],
               ),
             ),
-
           ],
         ),
       ),
     );
   }
 }
-
