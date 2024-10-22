@@ -1,4 +1,5 @@
 import 'package:caffein/home_screen_mobile.dart';
+import 'package:caffein/home_screen_web.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -28,10 +29,10 @@ class MyHomePage extends StatelessWidget {
             builder: (BuildContext context, BoxConstraints constraints) {
               if (constraints.maxWidth <= 600) {
                 return HomeScreenMobile(title: title);
-              } else if (constraints.maxWidth <= 1200) {
-                return HomeScreenMobile(title: title);
+              } else if (constraints.maxWidth <= 1000) {
+                return const HomeScreenWeb(gridSize: 3);
               } else {
-                return HomeScreenMobile(title: title);
+                return const HomeScreenWeb(gridSize: 4);
               }
             },
           ),

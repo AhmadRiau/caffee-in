@@ -30,15 +30,15 @@ class DetailScreenMobile extends StatelessWidget {
                   coffeeData.imageAsset,
                   width: double.infinity,
                   height: 300,
-                  fit: BoxFit.cover, // agar gambar menyesuaikan ukuran kontainer
+                  fit: BoxFit.cover,
                 ),
                 Positioned(
-                  bottom: 0, // Menempatkan teks di bagian bawah
+                  bottom: 0,
                   left: 0,
                   right: 0,
                   child: Container(
-                    width: double.infinity, // Lebar container mengikuti lebar parent
-                    padding: const EdgeInsets.all(16.0), // Berikan padding di sekitar teks
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(16.0),
                     decoration: const BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
@@ -57,7 +57,7 @@ class DetailScreenMobile extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                             fontSize: 30.0,
-                            color: Color(0xFFFFF0D1), // pastikan teks terlihat di atas gambar
+                            color: Color(0xFFFFF0D1),
                             fontWeight: FontWeight.bold,
                           ),
                         ),

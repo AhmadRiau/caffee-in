@@ -14,7 +14,7 @@ class HomeScreenMobile extends StatefulWidget {
 class _HomeScreenMobileState extends State<HomeScreenMobile> {
   String selectedRegion = 'Semua';
 
-  final List<String> regions = ['Semua', 'Mentaos', 'Loktabat Utara', 'Guntung Paikat', 'Landasan Ulin', 'Loktabat Selatan', 'Cempaka', ];
+  final List<String> regions = ['Semua', 'Mentaos', 'Loktabat Utara', 'Guntung Paikat', 'Landasan Ulin', 'Loktabat Selatan', 'Cempaka' ];
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,6 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-
               margin: const EdgeInsets.all(8.0),
               padding: const EdgeInsets.all(8.0),
               decoration: BoxDecoration(
@@ -38,9 +37,12 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
               child: FittedBox(
                 child: Row(
                   children: [
-                    const Text('Daerah : ', style: TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.bold,
-                    ),),
+                    const Text(
+                      'Daerah : ',
+                      style: TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     DropdownButton<String>(
                       value: selectedRegion,
                       onChanged: (String? newValue) {

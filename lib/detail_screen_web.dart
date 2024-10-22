@@ -42,7 +42,9 @@ class DetailScreenWeb extends StatelessWidget {
                     Expanded(
                       flex: 2,
                       child: Container(
-                        height: MediaQuery.of(context).size.height*0.8,
+                        constraints: BoxConstraints(
+                          maxHeight: MediaQuery.of(context).size.height*0.8,
+                        ),
                         padding: const EdgeInsets.all(16.0),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(6),
@@ -152,8 +154,11 @@ class DetailScreenWeb extends StatelessWidget {
                     // Image content
                     Flexible(
                       flex: 3,
-                      child: SizedBox(
-                        width: 600,
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxHeight: MediaQuery.of(context).size.height*0.8,
+                          minWidth: MediaQuery.of(context).size.height,
+                        ),
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: InstaImageViewer(
@@ -162,13 +167,14 @@ class DetailScreenWeb extends StatelessWidget {
                               borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
                                 coffeeData.imageAsset,
-                                fit: BoxFit.contain,
+                                fit: BoxFit.cover, width: double.infinity,
                               ),
                             ),
                           ),
                         ),
                       ),
                     ),
+
                     const Padding(padding: EdgeInsets.all(8)),
 
                     // Gallery content
@@ -184,8 +190,10 @@ class DetailScreenWeb extends StatelessWidget {
                           children: [
                             Text("Gallery", style: textHeader),
                             const Padding(padding: EdgeInsets.only(top: 10)),
-                            SizedBox(
-                              height: MediaQuery.of(context).size.height*0.7,
+                            ConstrainedBox(
+                              constraints: BoxConstraints(
+                                maxHeight: MediaQuery.of(context).size.height*0.5,
+                              ),
                               child: ListView(
                                 children: coffeeData.imageSets.map((source) {
                                   return Padding(
