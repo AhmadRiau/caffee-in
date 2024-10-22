@@ -172,7 +172,7 @@ class DetailScreenMobile extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Padding(padding: const EdgeInsets.symmetric(vertical: 2.0),),
+                  const Padding(padding: EdgeInsets.symmetric(vertical: 2.0),),
                   const Divider(
                     height: 20,
                     thickness: 2,

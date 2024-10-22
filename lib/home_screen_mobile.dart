@@ -38,7 +38,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
               child: FittedBox(
                 child: Row(
                   children: [
-                    const Text('Filter : ', style: TextStyle(
+                    const Text('Daerah : ', style: TextStyle(
                       fontSize: 16, fontWeight: FontWeight.bold,
                     ),),
                     DropdownButton<String>(
